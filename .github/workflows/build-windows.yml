@@ -31,6 +31,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: GreenCardVisa-windows-${{ github.sha }}
-          path: dist/
+          path: dist/*-setup.exe
           if-no-files-found: error
+          compression-level: 9
           retention-days: 14

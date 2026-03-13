@@ -1,5 +1,6 @@
 appId: com.jackchendong.greencardvisa
 productName: GreenCardVisa
+compression: maximum
 directories:
   output: dist
 files:
@@ -10,6 +11,9 @@ files:
 asar: true
 win:
   artifactName: '${productName}-${version}-${arch}-setup.${ext}'
+  electronLanguages:
+    - en-US
+    - zh-CN
   target:
     - target: nsis
       arch:
@@ -17,3 +21,4 @@ win:
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true
+  packElevateHelper: false

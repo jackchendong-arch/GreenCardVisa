@@ -5,4 +5,4 @@ Desktop App Processing Chinese Green Card Visa Applications.
 
 Every push triggers the GitHub Actions workflow in `.github/workflows/build-windows.yml`.
 It installs dependencies on `windows-latest`, builds a Windows NSIS installer with `electron-builder`,
-and uploads the packaged output as a workflow artifact from the Actions run summary.
+and uploads only the final Windows installer `.exe` as a workflow artifact from the Actions run summary.
