@@ -24,6 +24,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Stamp CI build version
+        shell: bash
+        run: |
+          VERSION=$(node -e "const pkg = require('./package.json'); const [major, minor] = pkg.version.split('.'); process.stdout.write([major, minor, process.env.GITHUB_RUN_NUMBER].join('.'));")
+          npm version --no-git-tag-version "$VERSION"
+
       - name: Build Windows installer
         run: npm run dist:win
 
