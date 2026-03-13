@@ -1,0 +1,19 @@
+appId: com.jackchendong.greencardvisa
+productName: GreenCardVisa
+directories:
+  output: dist
+files:
+  - main.js
+  - preload.js
+  - index.html
+  - package.json
+asar: true
+win:
+  artifactName: '${productName}-${version}-${arch}-setup.${ext}'
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
