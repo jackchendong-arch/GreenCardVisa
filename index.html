@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at top, #dff5ff, transparent 45%),
+          linear-gradient(135deg, #f7fbff 0%, #eef6ff 100%);
+        color: #0f172a;
+      }
+
+      main {
+        width: min(720px, calc(100vw - 48px));
+        padding: 48px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 24px 80px rgba(15, 23, 42, 0.12);
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        letter-spacing: -0.06em;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: #334155;
+      }
+
+      .versions {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .chip {
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: #e0f2fe;
+        color: #0c4a6e;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Hello World</h1>
+      <p>Your Electron app is set up and ready to run.</p>
+      <section class="versions" id="versions"></section>
+    </main>
+    <script>
+      const versions = window.electronAPI?.versions ?? {};
+      const container = document.getElementById('versions');
+
+      Object.entries(versions).forEach(([name, value]) => {
+        const chip = document.createElement('div');
+        chip.className = 'chip';
+        chip.textContent = `${name}: ${value}`;
+        container.appendChild(chip);
+      });
+    </script>
+  </body>
+</html>

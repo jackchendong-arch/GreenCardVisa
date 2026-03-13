@@ -1,0 +1,12 @@
+{
+  "name": "greencardvisa-electron-hello-world",
+  "version": "1.0.0",
+  "description": "Minimal Electron Hello World app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "latest"
+  }
+}
